@@ -9,6 +9,7 @@ import { IProduct } from './product';
 export class ProductListComponent implements OnInit {
   pageTitle = 'Product List';
   showImage: boolean = false;
+  onNotify(message:string):void{}
  
 
   private _listFilter:string = '';
@@ -64,6 +65,10 @@ export class ProductListComponent implements OnInit {
     this.listFilter = ''
     this.performFilter
     
+  }
+
+  onRatingClicked(message:string): void {
+    this.pageTitle = 'Product List: ' + message;
   }
 
 }
